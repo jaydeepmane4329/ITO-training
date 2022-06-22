@@ -1,0 +1,28 @@
+canvas{
+    margin: auto;
+    width: 20%;
+}
+
+#div1 {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+  }
+
+  /* Pseudo classes */
+
+  h6::first-line {
+    color: #ff0000;
+    font-variant: small-caps;
+  }
+
+  h6::first-letter {
+    color: #ff0000;
+    font-size: xx-large;
+  }
+
+  p.intro::first-letter {
+    color: skyblue;
+    font-size: 200%;
+  }
