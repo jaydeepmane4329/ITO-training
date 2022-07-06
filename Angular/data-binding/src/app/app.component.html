@@ -1,0 +1,50 @@
+<h1>{{title}}</h1>
+<!-- String Interpolation -->
+<p>My id is {{id}} and my name is {{name}}</p>
+
+<!-- property  Binding -->
+<button class="btn btn-primary" [disabled]="allowNewServer">Add server </button>
+
+<!-- <p>{{allowNewServer}}</p>  -->
+<p [innerText]="allowNewServer"></p>
+
+
+<!-- Event Binding -->
+
+<button class="btn btn-primary" (click)="onCreateSrever()">Click to Create Server</button>
+<p>{{serverCreation}}</p>
+
+<!-- Event binding with passing data -->
+
+<input type="text" (input)="typing($event)">
+<p>{{data}}</p>
+
+<!-- Two way Binding.. -->
+
+<input type="text" [(ngModel)]="data">
+<br>
+<br>
+<!-- Directives -->
+<!-- *ngIf -->
+<!-- <p *ngIf="showContent">This is a *ngIf directive applied tag it will appear in dom after event hitting</p>
+<button class="btn btn-primary" (click)="apply()">Click here</button> -->
+
+<!-- Directives -->
+<!-- *ngIf else -->
+<p *ngIf="showContent; else noServer">This is a *ngIf directive applied tag it will appear in dom after event hitting</p>
+<ng-template #noServer>
+    <p >This is false into else part of *ngIf directive</p>
+</ng-template>
+<button class="btn btn-primary" (click)="apply()">Click here</button>
+<br>
+<br>
+
+<!-- ngStyle -->
+
+<p [ngStyle]="{backgroundColor: getColor()}">The server Status is {{serverStatus}}</p>
+
+<!-- ngClass -->
+<p [ngClass]="{online : serverStatus === 'online'}">This is ngClass added tag {{serverStatus}}</p>
+
+
+<!-- ngFor -->
