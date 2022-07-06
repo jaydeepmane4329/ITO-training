@@ -1,0 +1,7 @@
+<p>server component</p>
+
+<button (click)="show()" class="btn btn-primary">{{title}}</button>
+<p *ngIf="showPassword">Secret Password= "tuna"</p>
+<div *ngFor="let time of timeStamps" [ngStyle]="{backgroundColor : time >= 5 ? 'blue' : 'tranparent' }"
+    [ngClass]="{textColor: time >= 5}">
+    {{time}}</div>
