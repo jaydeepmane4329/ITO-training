@@ -1,0 +1,7 @@
+<app-gamecontrol (count)="increament($event)"></app-gamecontrol>
+<div style="text-align: center;">
+    <app-even *ngFor="let num of even" [number]="num"></app-even>
+</div>
+<div style="text-align: center;">
+    <app-odd *ngFor="let num of odd" [number] = "num"></app-odd>
+</div>
