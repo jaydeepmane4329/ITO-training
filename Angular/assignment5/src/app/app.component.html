@@ -1,0 +1,7 @@
+<div>
+  <h3>Active Users</h3>
+  <app-active-users *ngFor="let active of activeUsers" [data]="active"></app-active-users>
+
+  <h3>InActive Users</h3>
+  <app-inactive-users *ngFor="let inactive of inActiveUsers" [inactiveData]="inactive"></app-inactive-users>
+</div>
