@@ -1,0 +1,46 @@
+<b>Assignment For Template Driven Approach Inside a Forms Handling</b>
+<p>1.Form which has mail address input feild</p>
+<p>2.Drop Down with Three Options</p>
+<p>3.Password feild</p>
+<p>4.submit button</p>
+<br />
+<br />
+<p>Validaors :email should not be empty and valid email address</p>
+<p>dropDown has default value</p>
+<p>Password should not be empty</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input class="form-control" type="text" name="email" ngModel required email #email="ngModel"/>
+          <p *ngIf="!email.valid && email.touched">Enter a valid email!</p>
+        </div>
+        <div>
+          <label for="option">Select Level</label>
+          <br />
+          <select name="" id="" class="form controll" name="level" [ngModel]="defaultValue">
+            <option value="simples">Simple</option>
+            <option value="medium">Medium</option>
+            <option value="advance">Advance</option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label for="Password">Password</label>
+          <input type="password" name="password" id="" class="form-control" ngModel required/>
+        </div>
+        <br />
+        <button [disabled]="!email.valid" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div *ngIf="submitted">
+      <p>Your Data:</p>
+      <p>User email : {{user.email}}</p>
+      <p> Level :{{user.level}}</p>
+      <p> Password :{{user.password}}</p>
+    </div>
+  </div>
+</div>
